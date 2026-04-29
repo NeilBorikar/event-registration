@@ -1,0 +1,28 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: event-registration-api
+    runtime: node
+    plan: free
+    rootDir: event-registration-system/server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  # Frontend Static Site
+  - type: static
+    name: event-registration-client
+    runtime: static
+    plan: free
+    rootDir: event-registration-system/client
+    buildCommand: npm install && npm run build
+    staticPublishDir: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        value: https://event-registration-api.onrender.com # Update this after first deployment if needed

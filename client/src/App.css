@@ -1,0 +1,351 @@
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in { animation: fadeIn 0.7s ease-out forwards; }
+.animate-float   { animation: float 3s ease-in-out infinite; }
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.25);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ===== LAYOUT ===== */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  width: 100%;
+}
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.min-h-screen { min-height: 100vh; }
+
+/* ===== FLEX HELPERS ===== */
+
+.flex          { display: flex; }
+.flex-col      { flex-direction: column; }
+.items-center  { align-items: center; }
+.items-end     { align-items: flex-end; }
+.justify-center  { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-2  { gap: 0.5rem; }
+.gap-4  { gap: 1rem; }
+.gap-6  { gap: 1.5rem; }
+.gap-8  { gap: 2rem; }
+.gap-10 { gap: 2.5rem; }
+
+/* ===== SPACING ===== */
+
+.py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+.py-32 { padding-top: 8rem; padding-bottom: 8rem; }
+.mb-2  { margin-bottom: 0.5rem; }
+.mb-3  { margin-bottom: 0.75rem; }
+.mb-4  { margin-bottom: 1rem; }
+.mb-6  { margin-bottom: 1.5rem; }
+.mb-10 { margin-bottom: 2.5rem; }
+.mb-12 { margin-bottom: 3rem; }
+.mb-16 { margin-bottom: 4rem; }
+.mb-20 { margin-bottom: 5rem; }
+.mt-auto { margin-top: auto; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* ===== TEXT ===== */
+
+.text-center { text-align: center; }
+.text-sm  { font-size: 0.875rem; }
+.text-lg  { font-size: 1.125rem; }
+.text-xl  { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.text-4xl { font-size: 2.25rem;  line-height: 2.5rem; }
+.text-5xl { font-size: 3rem;     line-height: 1; }
+.font-bold     { font-weight: 700; }
+.font-extrabold{ font-weight: 800; }
+.uppercase     { text-transform: uppercase; }
+.tracking-wider { letter-spacing: 0.05em; }
+.leading-relaxed { line-height: 1.7; }
+.opacity-60 { opacity: 0.6; }
+.opacity-70 { opacity: 0.7; }
+
+/* ===== SIZING ===== */
+
+.w-10 { width:  2.5rem; }
+.h-10 { height: 2.5rem; }
+.w-full { width: 100%; }
+
+/* ===== BORDER-RADIUS ===== */
+
+.rounded-xl  { border-radius: 0.75rem; }
+.rounded-full{ border-radius: 9999px; }
+.rounded-2xl { border-radius: 1rem; }
+
+/* ===== GRADIENT TEXT ===== */
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== BUTTONS ===== */
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(139, 92, 246, 0.6);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* ===== GLASS CARD (base) ===== */
+
+.glass-card {
+  background: rgba(20, 30, 48, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 28px;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== HERO SECTION ===== */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* Darken edges so nav + buttons read clearly; center stays vibrant */
+  background:
+    linear-gradient(to bottom,  rgba(10,18,35,0.75) 0%, transparent 30%, transparent 65%, rgba(10,18,35,0.95) 100%),
+    linear-gradient(to right,   rgba(10,18,35,0.4)  0%, transparent 25%, transparent 75%, rgba(10,18,35,0.4) 100%);
+  z-index: 1;
+}
+
+/* ===== NAVBAR (absolute, inside hero) ===== */
+
+.absolute-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 4rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===== HERO CONTENT (buttons only) ===== */
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  /* Push buttons toward the bottom-center of the hero */
+  margin-top: 58vh;
+}
+
+/* ===== EVENT CARDS ===== */
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Event card specific overrides — no padding so image fills top */
+.event-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+}
+
+.event-card-image {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.event-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-card-image img {
+  transform: scale(1.07);
+}
+
+.event-card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* ===== FEATURE / WHY-CHOOSE CARDS ===== */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-box {
+  width: 76px;
+  height: 76px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.75rem;
+}
+
+.bg-blue-500\/20   { background-color: rgba(59,  130, 246, 0.18); }
+.bg-purple-500\/20 { background-color: rgba(168, 85,  247, 0.18); }
+.bg-pink-500\/20   { background-color: rgba(236, 72,  153, 0.18); }
+
+/* ===== FORMS ===== */
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  color: white;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ===== MISC ===== */
+
+.border-glass { border-color: rgba(255,255,255,0.08); }
+.border-t     { border-top-width: 1px; border-top-style: solid; }
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .absolute-nav  { padding: 1.5rem 1.5rem; }
+  .hero-content  { margin-top: 60vh; gap: 1rem; }
+  .feature-grid  { grid-template-columns: 1fr; }
+  .event-grid    { grid-template-columns: 1fr; }
+}
